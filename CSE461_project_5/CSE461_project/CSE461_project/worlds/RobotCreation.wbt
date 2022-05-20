@@ -1,0 +1,138 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.05101771400924022 -0.9515968941850517 -0.30308504389797053 3.4793823141912466
+  position 0.3285566362728163 1.1244372825555196 -1.8533183503152275
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+Robot {
+  translation 0 0.1 0
+  children [
+    DEF BR HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation -0.06004 -0.013 -0.05
+        rotation 0 0 1 1.57
+        children [
+          DEF Wheel_BR Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE Wheel_BR
+        physics Physics {
+        }
+      }
+    }
+    DEF BL HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation 0.05996 -0.013 -0.05
+        rotation 0 0 1 1.57
+        children [
+          DEF Wheel_BL Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE Wheel_BL
+        physics Physics {
+        }
+      }
+    }
+    DEF FR HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation -0.06004 -0.013 0.05
+        rotation 0 0 1 1.57
+        children [
+          DEF Wheel_FR Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE Wheel_FR
+        physics Physics {
+        }
+      }
+    }
+    DEF FL HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation 0.05996 -0.013 0.05
+        rotation 0 0 1 1.57
+        children [
+          DEF Wheel_FL Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        boundingObject USE Wheel_FL
+        physics DEF Wheel_FL Physics {
+        }
+      }
+    }
+    DEF Body Shape {
+      appearance PBRAppearance {
+        baseColor 0.333333 0.333333 0.498039
+        metalness 0.5
+      }
+      geometry Box {
+        size 0.1 0.05 0.2
+      }
+    }
+  ]
+  boundingObject USE Body
+  physics Physics {
+  }
+}

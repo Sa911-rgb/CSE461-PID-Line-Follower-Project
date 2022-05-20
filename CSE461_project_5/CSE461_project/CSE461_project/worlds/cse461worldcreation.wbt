@@ -1,0 +1,151 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.7259185555254722 0.6614615002681723 0.18844345148290648 5.5995514704157285
+  position -0.7956330316472134 1.2082275996725553 1.488198541018022
+}
+Background {
+  skyColor [
+    1 1 1
+  ]
+  luminosity 0
+}
+DEF Box Solid {
+  translation 0 0.17 -0.27
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+        }
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+}
+DEF Sphere Solid {
+  translation 0.27 0.09 0
+  children [
+    DEF Sphere Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0.666667 1
+        }
+      }
+      geometry Sphere {
+        radius 0.08
+        subdivision 3
+      }
+    }
+  ]
+  boundingObject Sphere {
+    radius 0.08
+    subdivision 3
+  }
+  physics Physics {
+  }
+}
+DirectionalLight {
+  direction 0 -1 0
+  castShadows TRUE
+}
+DEF WallZ+ Solid {
+  translation 0 0 0.49
+  children [
+    DEF WallZ+ Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.666667 0.333333 0
+        }
+      }
+      geometry Box {
+        size 1 0.2 0.02
+      }
+    }
+  ]
+  boundingObject USE WallZ+
+}
+DEF WallZ- Solid {
+  translation 0 0 -0.5
+  children [
+    DEF WallZ- Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.666667 0.333333 0
+        }
+      }
+      geometry Box {
+        size 1 0.2 0.02
+      }
+    }
+  ]
+  boundingObject USE WallZ-
+}
+DEF WallX+ Solid {
+  translation 0.49 0 -1.79983e-06
+  rotation 0 1 0 1.5708
+  children [
+    DEF WallX+ Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.666667 0.333333 0
+        }
+      }
+      geometry Box {
+        size 1 0.2 0.02
+      }
+    }
+  ]
+  boundingObject USE WallX+
+}
+DEF WallX- Solid {
+  translation -0.49 0 1.79984e-06
+  rotation 0 1 0 1.5708
+  children [
+    DEF WallX- Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.666667 0.333333 0
+        }
+      }
+      geometry Box {
+        size 1 0.2 0.02
+      }
+    }
+  ]
+  boundingObject USE WallX-
+}
+DEF Floor Solid {
+  children [
+    DEF Floor_Shape Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0.333333 0
+        }
+      }
+      geometry Box {
+        size 1 0.01 1
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject DEF Floor_Shape Shape {
+    appearance Appearance {
+      material Material {
+        diffuseColor 0 0.333333 0
+      }
+    }
+    geometry Box {
+      size 1 0.01 1
+    }
+  }
+}
